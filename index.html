@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Web components</title>
+    <script src="tooltip.js"></script>
+    <script src="comfirm-link.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            --color-primary: red;
+            font-family: sans-serif;
+        }
+    </style>
+  </head>
+  <body>
+    <p><as-tooltip>Web components</as-tooltip> are awesome!</p>
+    <as-tooltip class="important" text=" yahoo ">
+      <span class="highlight">Yeah</span>
+    </as-tooltip>
+    <a is="as-confirm-link" href="http://yahoo.com">Yahoo</a>
+  </body>
+</html>

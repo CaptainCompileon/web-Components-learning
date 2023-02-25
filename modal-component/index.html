@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Modal Component</title>
+    <script src="modal.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 2rem;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <as-modal>
+      <h1 slot="title">Please Confirm</h1>
+      <p slot="message">With your confirmation you agree to the full amount</p>
+    </as-modal>
+    <p>Please confirm your choice.</p>
+    <button>Show details & Confirm</button>
+    <script>
+      const modal = document.querySelector("as-modal");
+      const button = document.querySelector("button");
+      button.addEventListener("click", () => {
+        if (!modal.isOpen) {
+          modal.open();
+        }
+      });
+      modal.addEventListener("cancel", () => {
+        console.log("Modal closed");
+      });
+      modal.addEventListener("confirm", () => {
+          console.log("Modal confirmed");
+      });
+    </script>
+  </body>
+</html>
